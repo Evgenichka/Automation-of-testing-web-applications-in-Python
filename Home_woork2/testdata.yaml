@@ -1,0 +1,9 @@
+address: https://test-stand.gb.ru
+browser: yandex
+sleep_time: 2
+wait: 3
+username: RobHood
+password: b2c4efd2ac
+post_title: "Test Post Title"
+post_description: "Test Post description"
+post_content: "Test Post content."
