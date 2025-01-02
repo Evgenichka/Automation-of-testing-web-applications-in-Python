@@ -38,4 +38,4 @@ class BasePage:
         except:
             logging.exception("Exception with alert")
             return None
-        return start_browsing
+        
