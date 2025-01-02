@@ -20,7 +20,7 @@ class TestSearchLocators:
     LOCATOR_SAVE_BTN = (By.CSS_SELECTOR, """button[type="submit"]""")
     LOCATOR_SEARCH_TITLE_FIELD = (By.XPATH, """//*[@id='app']/main/div/div[1]/h1""")
     LOCATOR_HELLO = (By.XPATH, """//*[@id="app"]/main/nav/ul/li[3]/a""")
-#Локаторы для ДЗ 3
+
     LOCATOR_CONTACT = (By.XPATH, """//*[@id="app"]/main/nav/ul/li[2]/a""")
     LOCATOR_YOUR_NAME_CONTACT = (By.XPATH, """//*[@id="contact"]/div[1]/label/input""")
     LOCATOR_YOUR_EMAIL_CONTACT = (By.XPATH, """//*[@id="contact"]/div[2]/label/input""")
