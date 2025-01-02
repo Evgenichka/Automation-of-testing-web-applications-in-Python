@@ -30,3 +30,12 @@ class BasePage:
             logging.exception("Failed to start browser")
             start_browsing = None
         return start_browsing
+        
+     def get_alert_text(self):
+        try:
+            alert = self.driver.switch_to.alert
+            return alert.text
+        except:
+            logging.exception("Exception with alert")
+            return None
+        return start_browsing
