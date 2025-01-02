@@ -9,23 +9,14 @@ name = testdata.get("username")
 
 #локаторам даем осознанные имена заглавными буквами по стандарту PO
 class TestSearchLocators:
-    LOCATOR_LOGIN_FIELD = (By.XPATH, """//*[@id="login"]/div[1]/label/input""")
-    LOCATOR_PASS_FIELD = (By.XPATH, """//*[@id="login"]/div[2]/label/input""")
-    LOCATOR_LOGIN_BTN = (By.CSS_SELECTOR, "button")
-    LOCATOR_ERROR_FIELD = (By.XPATH, """//*[@id="app"]/main/div/div/div[2]/h2""")
-    LOCATOR_CREATE_BTN = (By.CSS_SELECTOR, "#create-btn")
-    LOCATOR_POST_TITLE_FIELD = (By.XPATH, """//*[@id='create-item']/div/div/div[1]/div/label/input""")
-    LOCATOR_POST_DESCRIPTION_FIELD = (By.XPATH, """//*[@id='create-item']/div/div/div[2]/div/label/span/textarea""")
-    LOCATOR_POST_CONTENT_FIELD = (By.XPATH, """//*[@id='create-item']/div/div/div[3]/div/label/span/textarea""")
-    LOCATOR_SAVE_BTN = (By.CSS_SELECTOR, """button[type="submit"]""")
-    LOCATOR_SEARCH_TITLE_FIELD = (By.XPATH, """//*[@id='app']/main/div/div[1]/h1""")
-    LOCATOR_HELLO = (By.XPATH, """//*[@id="app"]/main/nav/ul/li[3]/a""")
-
-    LOCATOR_CONTACT = (By.XPATH, """//*[@id="app"]/main/nav/ul/li[2]/a""")
-    LOCATOR_YOUR_NAME_CONTACT = (By.XPATH, """//*[@id="contact"]/div[1]/label/input""")
-    LOCATOR_YOUR_EMAIL_CONTACT = (By.XPATH, """//*[@id="contact"]/div[2]/label/input""")
-    LOCATOR_CONTENT_CONTACT = (By.XPATH, """//*[@id="contact"]/div[3]/label/span/textarea""")
-    LOCATOR_CONTACT_BTN = (By.XPATH, """//*[@id="contact"]/div[4]/button""")
+    ids = dict()
+    with open("./locators.yaml") as f:
+        locators = yaml.save_load(f)
+    for locator in locators["xpath"].keys():
+        ids[locator] = (By.XPATH, locators["xpath"][locator])
+    for locator in locators["css"].keys():
+        ids[locator] = (By.CSS_SELECTOR, locators["css"][locator])
+    
 
 
 
